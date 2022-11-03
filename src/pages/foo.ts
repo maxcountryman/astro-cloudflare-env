@@ -1,7 +1,7 @@
+import { foo } from "../foo";
+
 export const get = async () => {
     return {
-        body: JSON.stringify({
-            foo: "import.meta.env.FOO",
-        }),
+        body: JSON.stringify({ foo: await foo() }),
     };
 };
