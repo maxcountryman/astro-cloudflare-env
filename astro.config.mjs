@@ -1,19 +1,16 @@
-import { defineConfig } from 'astro/config';
-import solid from '@astrojs/solid-js';
+import { defineConfig } from "astro/config";
 
 // https://astro.build/config
-import cloudflare from '@astrojs/cloudflare';
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solid()],
-  output: 'server',
-  adapter: cloudflare({ mode: 'directory' }),
+    output: "server",
+    adapter: cloudflare(),
 
-  vite: {
-    define: {
-      'process.env.SECRET': process.env.SECRET,
-      'process.env.USER': process.env.USER,
+    vite: {
+        define: {
+            "process.env.FOO": process.env.FOO,
+        },
     },
-  },
 });
